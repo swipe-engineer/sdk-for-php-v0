@@ -21,12 +21,12 @@ final class Sdk
         $uriFactory = $uriFactory ?: Psr17FactoryDiscovery::findUriFactory();
 
         $this->clientBuilder->addPlugin(
-            new BaseUriPlugin($uriFactory->createUri('https://jsonplaceholder.typicode.com'))
+            new BaseUriPlugin($uriFactory->createUri('https://stg-api.swipego.io/api/'))
         );
         $this->clientBuilder->addPlugin(
             new HeaderDefaultsPlugin(
                 [
-                    'User-Agent' => 'My Custom SDK',
+                    'User-Agent' => 'My Swipe SDK',
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
                 ]
